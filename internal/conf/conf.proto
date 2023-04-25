@@ -1,0 +1,31 @@
+syntax = "proto3";
+package kratos.api;
+
+option go_package = "go-image-process/internal/conf;conf";
+
+import "google/protobuf/duration.proto";
+
+message Bootstrap {
+  Server server = 1;
+  Image image = 2;
+  Vip vip = 3;
+}
+
+message Server {
+  message HTTP {
+    string network = 1;
+    string addr = 2;
+    google.protobuf.Duration timeout = 3;
+  }
+  HTTP http = 1;
+}
+
+message Image{
+  int32 quality = 1;
+}
+
+message Vip{
+  int32 concurrencylevel = 1;
+  int32 maxcachemem = 2;
+  int32 maxcachesize = 3;
+}

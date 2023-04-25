@@ -1,0 +1,12 @@
+POST http://127.0.0.1:8080/image?
+    x-oss-process=image/resize,w_512,h_512/watermark,color_000000,fill_1,rotate_315,t_20,text_MTIzMTIz/blur,r_1,s_50/format,webp
+Content-Type: image/png
+
+< ./sample.png
+
+###
+
+POST http://127.0.0.1:8080/image?x-oss-process=info
+Content-Type: image/png
+
+< ./sample.png

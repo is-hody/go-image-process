@@ -1,0 +1,10 @@
+server:
+   http:
+      addr: 0.0.0.0:8080
+      timeout: 20s
+image:
+   quality: 80
+vip:
+   concurrencylevel: 4
+   maxcachemem: 0
+   maxcachesize: 0
